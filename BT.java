@@ -10,6 +10,8 @@ public class BT {
 //		phepTinhSoNguyen();
 //		chanLe();
 //		conVat();
+//		phuongTrinhBatNhat();
+		phuongTrinhBatHai();
 	}
 	public static void chiaHetCho5() {
 		//Take input number.
@@ -133,12 +135,58 @@ public class BT {
 			break;
 		}
 	}
- 	public static int inputSoNguyen() {
+ 	public static void phuongTrinhBatNhat() {
+ 		System.out.println("Phương trình bật nhất có dạng ax + b =0");
+ 		System.out.print("Vui lòng nhập số a: ");
+		double a = inputSoThuc();
+		System.out.print("Vui lòng nhập số b: ");
+		double b = inputSoThuc();
+		if (a==0 && b==0) System.out.println("Phương trình vô số nghiệm.");
+		else if (a==0 && b!=0) System.out.println("Phương trình vô nghiệm.");
+		else {
+			double x = -b/a;
+			System.out.println("Phương trình có nghiệm x = "+x);
+		}
+	}
+ 	public static void phuongTrinhBatHai() {
+ 		System.out.println("Phương trình bật nhất có dạng ax^2 + b =0");
+ 		System.out.print("Vui lòng nhập số a: ");
+		double a = inputSoThuc();
+		System.out.print("Vui lòng nhập số b: ");
+		double b = inputSoThuc();
+		double temp = -b/a;
+		
+		if (a==0 && b==0) System.out.println("Phương trình vô số nghiệm.");
+		else if (a==0 && b!=0) System.out.println("Phương trình vô nghiệm.");
+		else if (temp<0) System.out.println("Phương trình vô nghiệm.");
+		else {
+			double x1 = Math.sqrt(-b/a);
+			double x2 = -Math.sqrt(-b/a);
+			System.out.println("Phương trình có nghiệm x1 = "+x1);
+			System.out.println("Phương trình có nghiệm x2 = "+x2);
+		}
+	}
+	public static int inputSoNguyen() {
 		int numberA =0;
 		Scanner sc = new Scanner(System.in);
 		while(true) {
 			try {
 				numberA = sc.nextInt();
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("Vui lòng nhập số nguyên.");
+				sc.nextLine();
+			}
+		}
+		return numberA;
+	}
+ 	public static double inputSoThuc() {
+		double numberA =0;
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+			try {
+				numberA = sc.nextDouble();
 				break;
 			} catch (Exception e) {
 				// TODO: handle exception
