@@ -11,7 +11,7 @@ public class BT {
 //		chanLe();
 //		conVat();
 //		phuongTrinhBatNhat();
-		phuongTrinhBatHai();
+//		phuongTrinhBatHai();
 	}
 	public static void chiaHetCho5() {
 		//Take input number.
@@ -190,7 +190,7 @@ public class BT {
 				break;
 			} catch (Exception e) {
 				// TODO: handle exception
-				System.out.println("Vui lòng nhập số nguyên.");
+				System.out.println("Vui lòng nhập số thực.");
 				sc.nextLine();
 			}
 		}
